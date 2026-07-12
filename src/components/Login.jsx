@@ -4,19 +4,51 @@ function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [selectedRole, setSelectedRole] = useState('perangkat');
+  const [rememberMe, setRememberMe] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [showContactAdmin, setShowContactAdmin] = useState(false);
+  const [forgotEmail, setForgotEmail] = useState('');
+  const [forgotMsg, setForgotMsg] = useState('');
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Login submitted:', { username, password });
-    alert('Fitur login akan terhubung ke backend.');
+  const handleRoleSelect = (role) => {
+    setSelectedRole(role);
   };
 
-  const handleRoleSelect = (role) => {
-    console.log('Role selected:', role);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Login submitted:', { username, password, role: selectedRole, rememberMe });
+    alert(`Login sebagai ${selectedRole === 'admin' ? 'Admin' : selectedRole === 'kadus' ? 'Kepala Desa' : 'Perangkat Desa'}: ${username}`);
+  };
+
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+    if (!forgotEmail) {
+      setForgotMsg('Mohon masukkan NIPD atau email yang terdaftar.');
+      return;
+    }
+    setForgotMsg(`Instruksi reset kata sandi telah dikirim ke ${forgotEmail}.`);
+    setTimeout(() => {
+      setShowForgotPassword(false);
+      setForgotMsg('');
+      setForgotEmail('');
+    }, 2000);
+  };
+
+  const handleContactAdmin = () => {
+    setShowContactAdmin(true);
+  };
+
+  const roleButtonBase = "flex flex-col items-center justify-center p-3 rounded-lg transition-all group";
+  const getRoleButtonClass = (role) => {
+    const activeClass = selectedRole === role
+      ? "border-2 border-primary bg-primary/5 group-hover:text-primary"
+      : "border border-outline-variant bg-surface hover:border-primary group-hover:text-primary";
+    return `${roleButtonBase} ${activeClass}`;
   };
 
   return (
@@ -47,17 +79,17 @@ function Login() {
             <div className="space-y-3 mb-6">
               <label className="font-label-caps text-label-caps text-on-surface-variant uppercase">PILIH PERAN MASUK</label>
               <div className="grid grid-cols-3 gap-2">
-                <button type="button" onClick={() => handleRoleSelect('admin')} className="flex flex-col items-center justify-center p-3 rounded-lg border border-outline-variant bg-surface hover:border-primary transition-all group">
-                  <span className="material-symbols-outlined text-outline group-hover:text-primary mb-1">admin_panel_settings</span>
+                <button type="button" onClick={() => handleRoleSelect('admin')} className={getRoleButtonClass('admin')}>
+                  <span className={`material-symbols-outlined mb-1 ${selectedRole === 'admin' ? 'text-primary' : 'text-outline group-hover:text-primary'}`}>admin_panel_settings</span>
                   <span className="text-[10px] font-bold text-on-surface-variant group-hover:text-primary uppercase">Admin</span>
                 </button>
-                <button type="button" onClick={() => handleRoleSelect('kadus')} className="flex flex-col items-center justify-center p-3 rounded-lg border border-outline-variant bg-surface hover:border-primary transition-all group">
-                  <span className="material-symbols-outlined text-outline group-hover:text-primary mb-1">account_balance</span>
+                <button type="button" onClick={() => handleRoleSelect('kadus')} className={getRoleButtonClass('kadus')}>
+                  <span className={`material-symbols-outlined mb-1 ${selectedRole === 'kadus' ? 'text-primary' : 'text-outline group-hover:text-primary'}`}>account_balance</span>
                   <span className="text-[10px] font-bold text-on-surface-variant group-hover:text-primary uppercase">Kepala Desa</span>
                 </button>
-                <button type="button" onClick={() => handleRoleSelect('perangkat')} className="flex flex-col items-center justify-center p-3 rounded-lg border-2 border-primary bg-primary/5 transition-all group">
-                  <span className="material-symbols-outlined text-primary mb-1">badge</span>
-                  <span className="text-[10px] font-bold text-primary uppercase">Perangkat</span>
+                <button type="button" onClick={() => handleRoleSelect('perangkat')} className={getRoleButtonClass('perangkat')}>
+                  <span className={`material-symbols-outlined mb-1 ${selectedRole === 'perangkat' ? 'text-primary' : 'text-outline group-hover:text-primary'}`}>badge</span>
+                  <span className="text-[10px] font-bold text-on-surface-variant group-hover:text-primary uppercase">Perangkat</span>
                 </button>
               </div>
             </div>
@@ -99,16 +131,16 @@ function Login() {
               </div>
             </div>
 
-            {/* Options */}
-            <div className="flex items-center justify-between pt-1">
-              <label className="flex items-center space-x-2 cursor-pointer group">
-                <div className="relative flex items-center justify-center">
-                  <input type="checkbox" className="peer h-5 w-5 border-outline-variant rounded text-primary focus:ring-primary" />
-                </div>
-                <span className="font-body-sm text-body-sm text-on-surface-variant group-hover:text-primary transition-colors">Ingat Saya</span>
-              </label>
-              <a href="#" className="font-body-sm text-body-sm text-primary font-semibold hover:underline decoration-2 underline-offset-4">Lupa Kata Sandi?</a>
-            </div>
+             {/* Options */}
+             <div className="flex items-center justify-between pt-1">
+               <label className="flex items-center space-x-2 cursor-pointer group">
+                 <div className="relative flex items-center justify-center">
+                   <input type="checkbox" checked={rememberMe} onChange={(e) => setRememberMe(e.target.checked)} className="peer h-5 w-5 border-outline-variant rounded text-primary focus:ring-primary" />
+                 </div>
+                 <span className="font-body-sm text-body-sm text-on-surface-variant group-hover:text-primary transition-colors">Ingat Saya</span>
+               </label>
+               <button type="button" onClick={() => setShowForgotPassword(true)} className="font-body-sm text-body-sm text-primary font-semibold hover:underline decoration-2 underline-offset-4">Lupa Kata Sandi?</button>
+             </div>
 
             {/* Submit Button */}
             <button type="submit" className="w-full h-[56px] bg-primary text-on-primary rounded-lg font-title-md text-title-md font-bold shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all flex items-center justify-center space-x-2 mt-4 relative overflow-hidden">
@@ -118,7 +150,7 @@ function Login() {
           </form>
           <div className="mt-10 pt-6 border-t border-outline-variant text-center">
             <p className="font-body-sm text-body-sm text-on-surface-variant">Belum memiliki akun? <br />
-              <a href="#" className="text-primary font-bold">Hubungi Administrator Desa</a>
+              <button type="button" onClick={handleContactAdmin} className="text-primary font-bold">Hubungi Administrator Desa</button>
             </p>
           </div>
         </div>
@@ -151,6 +183,66 @@ function Login() {
           </div>
         </div>
       </footer>
+
+      {showForgotPassword && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.05)] p-6 max-w-sm w-full">
+            <h3 className="font-title-md text-title-md text-primary mb-2">Lupa Kata Sandi</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant mb-4">Masukkan NIPD atau email terdaftar untuk menerima instruksi reset kata sandi.</p>
+            <form onSubmit={handleForgotPassword} className="space-y-4">
+              <input
+                type="text"
+                value={forgotEmail}
+                onChange={(e) => setForgotEmail(e.target.value)}
+                placeholder="NIPD atau Email"
+                className="w-full h-12 pl-4 pr-4 bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all font-body-lg text-body-lg outline-none"
+              />
+              <button type="submit" className="w-full h-12 bg-primary text-on-primary rounded-lg font-title-md text-title-md font-bold shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all">
+                Kirim Instruksi
+              </button>
+            </form>
+            {forgotMsg && <p className="font-body-sm text-body-sm text-primary mt-3">{forgotMsg}</p>}
+            <button type="button" onClick={() => { setShowForgotPassword(false); setForgotMsg(''); setForgotEmail(''); }} className="mt-4 w-full h-10 font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">
+              Tutup
+            </button>
+          </div>
+        </div>
+      )}
+
+      {showContactAdmin && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.05)] p-6 max-w-sm w-full">
+            <h3 className="font-title-md text-title-md text-primary mb-2">Hubungi Administrator Desa</h3>
+            <p className="font-body-sm text-body-sm text-on-surface-variant mb-4">Silakan hubungi administrator melalui saluran berikut untuk pembuatan akun atau bantuan lainnya.</p>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3 p-3 rounded-lg border border-outline-variant bg-surface">
+                <span className="material-symbols-outlined text-primary text-[20px]">call</span>
+                <div>
+                  <p className="font-body-sm text-body-sm text-on-surface font-semibold">Telepon</p>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">+62 812-3456-7890</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3 p-3 rounded-lg border border-outline-variant bg-surface">
+                <span className="material-symbols-outlined text-primary text-[20px]">mail</span>
+                <div>
+                  <p className="font-body-sm text-body-sm text-on-surface font-semibold">Email</p>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">admin@desapiliyanga.id</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-3 p-3 rounded-lg border border-outline-variant bg-surface">
+                <span className="material-symbols-outlined text-primary text-[20px]">chat</span>
+                <div>
+                  <p className="font-body-sm text-body-sm text-on-surface font-semibold">WhatsApp</p>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">+62 812-3456-7890</p>
+                </div>
+              </div>
+            </div>
+            <button type="button" onClick={() => setShowContactAdmin(false)} className="mt-5 w-full h-12 bg-primary text-on-primary rounded-lg font-title-md text-title-md font-bold shadow-lg hover:bg-primary-container active:scale-[0.98] transition-all">
+              Tutup
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
