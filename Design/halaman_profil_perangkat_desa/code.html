@@ -1,0 +1,316 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#d0e1fb",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c4c6d3",
+                    "inverse-surface": "#263143",
+                    "tertiary-fixed": "#e0e3e5",
+                    "tertiary": "#292d2e",
+                    "surface-tint": "#345baf",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "surface-dim": "#cfdaf2",
+                    "on-primary-fixed": "#001947",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#434652",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "secondary-fixed": "#d3e4fe",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3f4345",
+                    "outline": "#747783",
+                    "surface": "#f9f9ff",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "surface-container-low": "#f0f3ff",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-secondary-container": "#54647a",
+                    "on-primary-container": "#8dadff",
+                    "secondary": "#505f76",
+                    "surface-variant": "#d8e3fb",
+                    "surface-container-high": "#dee8ff",
+                    "on-tertiary-container": "#adafb1",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#111c2d",
+                    "on-background": "#111c2d",
+                    "inverse-primary": "#b1c5ff",
+                    "primary": "#002869",
+                    "surface-container-highest": "#d8e3fb",
+                    "primary-container": "#0b3d91",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9f9ff",
+                    "primary-fixed": "#dae2ff",
+                    "surface-container": "#e7eeff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary-fixed-variant": "#144296"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "32px",
+                    "gutter": "16px",
+                    "card-gap": "24px",
+                    "container-padding-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "title-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "600"}],
+                    "title-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background min-h-screen pb-24">
+<!-- Top AppBar -->
+<header class="bg-surface dark:bg-on-background shadow-sm flex items-center justify-between px-container-padding-mobile h-16 w-full docked full-width top-0 sticky z-40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="account_balance" data-original-icon="account_balance">account_balance</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Presensi Sistem</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Official Village Logo of a modern Indonesian administrative district, featuring a professional emblem with balanced geometric shapes and corporate blue and silver tones, clean and authoritative digital vector style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ_AhIg1KuNcoYYf-K8xG0rzCUHuM8CFmJ9iyZWkyIG3559LXDRLhqSyGLu7D7lcWO0Sz0QEENzMXP-RPRpVSB0ZDP_qEySeHLvPLvXqMAy4YIthkkGQNfSUYpk2pUskW3uOhtczF_icYKrgYGYmuBf8hQl1Q_c2skfzvsrA_NESg4GvxAMxti_sFTDwRxGOw46_YJTKbGAaHzoWfCI7YmMiLNIRR28baf909BYP2ckc60F3wHSMVQIke_c68SfxFKZbgIHAwDMks">
+</div>
+</header>
+<main class="max-w-[1280px] mx-auto px-container-padding-mobile md:px-container-padding-desktop mt-gutter space-y-gutter">
+<!-- Profile Header Card -->
+<section class="relative overflow-hidden bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-6">
+<div class="absolute top-0 right-0 w-full h-full bg-batik-subtle pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
+<div class="relative">
+<div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white shadow-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of an Indonesian village official named Budi Santoso, aged around 35, wearing a neat khaki civil servant uniform (PNS). The background is a clean, softly blurred office environment with bright natural lighting and high-clarity corporate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcRFXRXYglPlMWGc0R0XcpTJ2EswzjIe6rHwUHU24KrI8xRTwQRmPk__f4yWZYwGXElM__CpTRTQNgN3QPWPydTcIGaUU6jGT66zG2EWkc3RmjpQQbOczrk3Q7fQjWxncawvrLdD3g3XhjjYUb1ocqiuBkLaOZ0yaE-Vy80IKjJZ5wSbmeFv4Na-NmN1hPX42r6CRkvIPEoBt6tcU7z4CiFQneO0-cvQn3AAr9zMnFPtYlOPQjmxf8hpEomvHRZ7SOzrlHPz3b99Q">
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white p-1.5 rounded-full shadow-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="verified" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+</div>
+</div>
+<div class="text-center md:text-left space-y-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Budi Santoso</h2>
+<p class="font-title-md text-title-md text-on-surface-variant">Kaur Keuangan</p>
+<div class="flex flex-wrap justify-center md:justify-start items-center gap-2 mt-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-caps text-label-caps">NIPD: 19870512001</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-caps text-label-caps">STAF AKTIF</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Profile Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-card-gap">
+<!-- Personal Info (Left) -->
+<div class="md:col-span-5 space-y-gutter">
+<div class="bg-white rounded-xl border border-outline-variant p-6 space-y-4">
+<div class="flex items-center justify-between border-b border-outline-variant pb-2">
+<h3 class="font-title-md text-title-md text-primary">Informasi Pribadi</h3>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="edit">edit</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">EMAIL</p>
+<p class="font-body-lg text-body-lg text-on-surface">budi.santoso@desa.go.id</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="phone">phone</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">TELEPON</p>
+<p class="font-body-lg text-body-lg text-on-surface">+62 812-3456-7890</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="location_on" data-original-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">ALAMAT</p>
+<p class="font-body-lg text-body-lg text-on-surface">Jl. Melati No. 45, Desa Suka Maju, Kec. Makmur</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-4 text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">HADIR BULAN INI</p>
+<p class="font-headline-lg text-headline-lg text-primary">22/24</p>
+</div>
+<div class="bg-surface-container-low rounded-xl border border-outline-variant p-4 text-center">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">RATA-RATA JAM</p>
+<p class="font-headline-lg text-headline-lg text-primary">07:55</p>
+</div>
+</div>
+</div>
+<!-- Attendance & Settings (Right) -->
+<div class="md:col-span-7 space-y-gutter">
+<!-- Kalender Kehadiran Pribadi Section -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 h-full flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="font-title-md text-title-md text-primary">Kalender Kehadiran</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Performa kehadiran Mei 2024</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-title-md text-body-sm border border-primary px-4 py-1.5 rounded-lg hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_month">calendar_month</span>
+                            Lihat Detail
+                        </button>
+</div>
+<!-- Simple Calendar Mockup -->
+<div class="grid grid-cols-7 gap-2 flex-grow">
+<!-- Header days -->
+<div class="text-center font-label-caps text-on-surface-variant">S</div>
+<div class="text-center font-label-caps text-on-surface-variant">S</div>
+<div class="text-center font-label-caps text-on-surface-variant">R</div>
+<div class="text-center font-label-caps text-on-surface-variant">K</div>
+<div class="text-center font-label-caps text-on-surface-variant">J</div>
+<div class="text-center font-label-caps text-on-surface-variant">S</div>
+<div class="text-center font-label-caps text-on-surface-variant">M</div>
+<!-- Empty slots for previous month -->
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<div class="aspect-square"></div>
+<!-- Days -->
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm relative group cursor-help">1
+                            <div class="hidden group-hover:block absolute bottom-full mb-2 bg-on-background text-white text-[10px] p-2 rounded whitespace-nowrap z-20">Hadir - 07:50</div>
+</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">2</div>
+<div class="aspect-square rounded-lg bg-red-100 flex items-center justify-center text-red-800 font-bold text-body-sm">3</div>
+<div class="aspect-square rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant text-body-sm">4</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">5</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">6</div>
+<div class="aspect-square rounded-lg bg-yellow-100 flex items-center justify-center text-yellow-800 font-bold text-body-sm">7</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">8</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">9</div>
+<div class="aspect-square rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant text-body-sm">10</div>
+<div class="aspect-square rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant text-body-sm">11</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">12</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">13</div>
+<div class="aspect-square rounded-lg bg-green-100 flex items-center justify-center text-green-800 font-bold text-body-sm">14</div>
+<!-- ... rest of calendar -->
+<div class="aspect-square rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-body-sm ring-2 ring-primary">15</div>
+<div class="aspect-square rounded-lg border border-dashed border-outline-variant flex items-center justify-center text-on-surface-variant text-body-sm opacity-50">16</div>
+<div class="aspect-square rounded-lg border border-dashed border-outline-variant flex items-center justify-center text-on-surface-variant text-body-sm opacity-50">17</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Menu List Section -->
+<section class="bg-white rounded-xl border border-outline-variant overflow-hidden shadow-sm">
+<div class="px-6 py-4 border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-title-md text-title-md text-primary">Akses Cepat &amp; Pengaturan</h3>
+</div>
+<div class="divide-y divide-outline-variant">
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">Pengaturan Akun</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">Keamanan &amp; Password</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-5 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="help">help</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">Pusat Bantuan</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<button class="w-full flex items-center justify-between p-5 hover:bg-error-container/20 transition-colors group text-left">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-error-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-error" data-icon="logout">logout</span>
+</div>
+<span class="font-body-lg text-body-lg text-error font-semibold">Keluar</span>
+</div>
+<span class="material-symbols-outlined text-error group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Footer Logo/Pattern -->
+<div class="pt-8 pb-12 flex flex-col items-center justify-center opacity-40 grayscale pointer-events-none">
+<span class="material-symbols-outlined text-5xl mb-2" data-icon="account_balance">account_balance</span>
+<p class="font-label-caps text-label-caps">PEMERINTAH DESA SUKA MAJU</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 pb-safe bg-surface dark:bg-on-background border-t border-outline-variant dark:border-outline">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps mt-1">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+<span class="font-label-caps text-label-caps mt-1">Presensi</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="assignment">assignment</span>
+<span class="font-label-caps text-label-caps mt-1">Izin</span>
+</a>
+<!-- Active Tab: Profil -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-primary dark:text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: &quot;FILL&quot; 1;">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profil</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for active state scaling
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('nav a').forEach(el => {
+                    el.classList.remove('bg-secondary-container', 'text-primary', 'rounded-full', 'scale-95');
+                    el.classList.add('text-on-surface-variant');
+                    const icon = el.querySelector('.material-symbols-outlined');
+                    if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                
+                this.classList.add('bg-secondary-container', 'text-primary', 'rounded-full', 'scale-95');
+                this.classList.remove('text-on-surface-variant');
+                const icon = this.querySelector('.material-symbols-outlined');
+                if (icon) icon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+
+</body></html>
