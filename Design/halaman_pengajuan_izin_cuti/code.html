@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="id" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#d0e1fb",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c4c6d3",
+                    "inverse-surface": "#263143",
+                    "tertiary-fixed": "#e0e3e5",
+                    "tertiary": "#292d2e",
+                    "surface-tint": "#345baf",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#f9f9ff",
+                    "surface-dim": "#cfdaf2",
+                    "on-primary-fixed": "#001947",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#434652",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "secondary-fixed": "#d3e4fe",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#3f4345",
+                    "outline": "#747783",
+                    "surface": "#f9f9ff",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "surface-container-low": "#f0f3ff",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-secondary-container": "#54647a",
+                    "on-primary-container": "#8dadff",
+                    "secondary": "#505f76",
+                    "surface-variant": "#d8e3fb",
+                    "surface-container-high": "#dee8ff",
+                    "on-tertiary-container": "#adafb1",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#111c2d",
+                    "on-background": "#111c2d",
+                    "inverse-primary": "#b1c5ff",
+                    "primary": "#002869",
+                    "surface-container-highest": "#d8e3fb",
+                    "primary-container": "#0b3d91",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9f9ff",
+                    "primary-fixed": "#dae2ff",
+                    "surface-container": "#e7eeff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary-fixed-variant": "#144296"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "32px",
+                    "gutter": "16px",
+                    "card-gap": "24px",
+                    "container-padding-mobile": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "title-md": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "600"}],
+                    "title-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-surface text-on-surface min-h-screen font-body-lg overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="bg-surface dark:bg-on-background shadow-sm flex items-center justify-between px-container-padding-mobile h-16 w-full fixed top-0 z-40 transition-colors duration-200">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-size: 28px;" data-original-icon="account_balance">account_balance</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Presensi Sistem</h1>
+</div>
+<div class="h-10 w-10 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="A professional portrait of an Indonesian government official in a clean, modern administrative setting. The lighting is soft and natural, emphasizing a trustworthy and professional character. The background is a minimalist, slightly blurred office interior with soft blue and white tones that match the institutional branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3E21U8o5E2qH2ImHcwvU-xlACDllTg2EkQWuPaFhZg_eQTj0MFZt6xsgw0BxMLke0WjXVQ6QXpuUjt8s9y-cQzzdKsUbvQRgSuo9Qx5TBwQ1toUXA50WK5GMwjOkwKZxcyWOKbQM179qn6srCTRWGbCa5aLiFGEIgcyIfnZpLRgV9bprYakoCm7BLNVsIJ7RHHeshTOVhS4ANn2jDM2dHjFI8bjcIpBSOgN6QLasGy--EREhrFLo6l9RaPATTctQAeLvqr6rSYQk">
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-padding-mobile max-w-2xl mx-auto relative">
+<div class="bg-batik-pattern"></div>
+<!-- Page Header -->
+<div class="mb-8 relative z-10">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">Pengajuan Izin/Cuti</h2>
+<p class="text-on-surface-variant font-body-sm">Lengkapi formulir di bawah untuk mengajukan permohonan absen kerja.</p>
+</div>
+<!-- Request Form Card -->
+<section class="glass-card rounded-xl p-6 shadow-sm mb-10 relative z-10">
+<form class="space-y-6" id="leaveForm">
+<!-- Jenis Pengajuan -->
+<div>
+<label class="font-label-caps text-label-caps text-outline block mb-3">JENIS PENGAJUAN</label>
+<div class="flex flex-wrap gap-2">
+<button class="type-chip px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-title-md transition-all hover:bg-surface-container-high" data-value="Izin" onclick="selectType('Izin')" type="button">
+                            Izin
+                        </button>
+<button class="type-chip px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-title-md transition-all hover:bg-surface-container-high" data-value="Cuti" onclick="selectType('Cuti')" type="button">
+                            Cuti
+                        </button>
+<button class="type-chip px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant font-title-md transition-all hover:bg-surface-container-high" data-value="Perjalanan Dinas" onclick="selectType('Perjalanan Dinas')" type="button">
+                            Dinas Luar
+                        </button>
+</div>
+<input id="leaveType" name="type" required="" type="hidden">
+</div>
+<!-- Dates -->
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="font-label-caps text-label-caps text-outline block mb-2">TANGGAL MULAI</label>
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-surface" required="" type="date">
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-outline block mb-2">TANGGAL SELESAI</label>
+<input class="w-full h-12 px-4 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-surface" required="" type="date">
+</div>
+</div>
+<!-- Keterangan -->
+<div>
+<label class="font-label-caps text-label-caps text-outline block mb-2">KETERANGAN / ALASAN</label>
+<textarea class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none bg-surface resize-none" placeholder="Tuliskan alasan pengajuan secara detail..." required="" rows="4"></textarea>
+</div>
+<!-- Submit Button -->
+<button class="w-full h-14 bg-primary text-on-primary rounded-xl font-title-md shadow-lg flex items-center justify-center gap-2 active:scale-95 transition-transform" type="submit">
+<span class="material-symbols-outlined">send</span>
+                    Kirim Pengajuan
+                </button>
+</form>
+</section>
+<!-- History Section -->
+<section class="relative z-10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-title-md text-title-md text-on-surface">Riwayat Pengajuan Terbaru</h3>
+<button class="text-primary font-label-caps text-label-caps">LIHAT SEMUA</button>
+</div>
+<div class="space-y-3">
+<!-- Item 1 -->
+<div class="glass-card p-4 rounded-lg flex items-center justify-between shadow-sm border-l-4 border-l-error">
+<div class="flex flex-col">
+<span class="font-title-md text-on-surface">Cuti Tahunan</span>
+<span class="text-body-sm text-on-surface-variant">12 - 14 Okt 2023</span>
+</div>
+<div class="px-3 py-1 bg-error-container text-on-error-container rounded-full text-label-caps font-bold">
+                        DITOLAK
+                    </div>
+</div>
+<!-- Item 2 -->
+<div class="glass-card p-4 rounded-lg flex items-center justify-between shadow-sm border-l-4 border-l-secondary">
+<div class="flex flex-col">
+<span class="font-title-md text-on-surface">Sakit (Izin)</span>
+<span class="text-body-sm text-on-surface-variant">05 Okt 2023</span>
+</div>
+<div class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-label-caps font-bold">
+                        PENDING
+                    </div>
+</div>
+<!-- Item 3 -->
+<div class="glass-card p-4 rounded-lg flex items-center justify-between shadow-sm border-l-4 border-l-primary">
+<div class="flex flex-col">
+<span class="font-title-md text-on-surface">Dinas Luar</span>
+<span class="text-body-sm text-on-surface-variant">28 Sep 2023</span>
+</div>
+<div class="px-3 py-1 bg-primary-container text-on-primary-container rounded-full text-label-caps font-bold">
+                        DISETUJUI
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-2 pb-safe bg-surface dark:bg-on-background border-t border-outline-variant dark:border-outline transition-colors duration-200">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 transition-transform duration-150 scale-95 hover:bg-surface-container-high dark:hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 transition-transform duration-150 scale-95 hover:bg-surface-container-high dark:hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined" data-original-icon="fingerprint">fingerprint</span>
+<span class="font-label-caps text-label-caps">Presensi</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-primary dark:text-on-primary-container rounded-full px-4 py-1 transition-transform duration-150 scale-95 shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;" data-original-icon="assignment">assignment</span>
+<span class="font-label-caps text-label-caps">Izin</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-container px-4 py-1 transition-transform duration-150 scale-95 hover:bg-surface-container-high dark:hover:bg-surface-container-highest" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">Profil</span>
+</a>
+</nav>
+<script>
+        function selectType(val) {
+            document.getElementById('leaveType').value = val;
+            const chips = document.querySelectorAll('.type-chip');
+            chips.forEach(chip => {
+                if (chip.getAttribute('data-value') === val) {
+                    chip.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+                    chip.classList.remove('text-on-surface-variant', 'border-outline-variant', 'hover:bg-surface-container-high');
+                } else {
+                    chip.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+                    chip.classList.add('text-on-surface-variant', 'border-outline-variant', 'hover:bg-surface-container-high');
+                }
+            });
+        }
+
+        document.getElementById('leaveForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Basic animation feedback
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">refresh</span> Mengirim...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Pengajuan berhasil dikirim!');
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+                e.target.reset();
+                document.querySelectorAll('.type-chip').forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary', 'border-primary');
+                    c.classList.add('text-on-surface-variant', 'border-outline-variant');
+                });
+            }, 1500);
+        });
+
+        // Micro-interaction for hover states on history cards
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-2px)';
+                card.style.transition = 'transform 0.2s ease-out';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0px)';
+            });
+        });
+    </script>
+
+</body></html>

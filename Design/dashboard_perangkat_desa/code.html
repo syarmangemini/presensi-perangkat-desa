@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Presensi Desa - Dashboard Perangkat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#3f4345",
+                    "inverse-primary": "#b1c5ff",
+                    "on-surface-variant": "#434652",
+                    "tertiary-fixed": "#e0e3e5",
+                    "tertiary-fixed-dim": "#c4c7c9",
+                    "tertiary": "#292d2e",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#747783",
+                    "surface-container": "#e7eeff",
+                    "surface-dim": "#cfdaf2",
+                    "on-surface": "#111c2d",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "primary-fixed": "#dae2ff",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#8dadff",
+                    "surface-variant": "#d8e3fb",
+                    "outline-variant": "#c4c6d3",
+                    "error": "#ba1a1a",
+                    "on-background": "#111c2d",
+                    "surface": "#f9f9ff",
+                    "inverse-on-surface": "#ecf1ff",
+                    "secondary": "#505f76",
+                    "secondary-fixed-dim": "#b7c8e1",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#54647a",
+                    "secondary-container": "#d0e1fb",
+                    "primary": "#002869",
+                    "primary-container": "#0b3d91",
+                    "surface-container-high": "#dee8ff",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#144296",
+                    "on-primary-fixed": "#001947",
+                    "surface-bright": "#f9f9ff",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "secondary-fixed": "#d3e4fe",
+                    "on-tertiary-fixed": "#191c1e",
+                    "surface-tint": "#345baf",
+                    "on-tertiary-container": "#adafb1",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#444749",
+                    "surface-container-highest": "#d8e3fb",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "background": "#f9f9ff",
+                    "inverse-surface": "#263143"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-mobile": "16px",
+                    "card-gap": "24px",
+                    "container-padding-desktop": "32px",
+                    "gutter": "16px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "title-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "display": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-md": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "30px", "fontWeight": "600"}],
+                    "display": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, #f0f3ff 25%, #dee8ff 50%, #f0f3ff 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .pattern-bg {
+            background-image: radial-gradient(#002869 0.5px, transparent 0.5px);
+            background-size: 16px 16px;
+            opacity: 0.03;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-4 md:px-8 h-16 shadow-sm bg-surface">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<h1 class="text-title-md font-title-md font-bold text-primary">Presensi Desa</h1>
+</div>
+<div class="flex gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<button class="p-1 rounded-full border-2 border-primary-container">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of Budi Santoso, a middle-aged Indonesian male government official wearing a clean white shirt. He has a friendly expression and is posed against a soft, neutral office background. The lighting is bright and professional, following a modern corporate aesthetic with high clarity and balanced tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHHdOvfAzsGJAQ04GkcuuZAK0Nl5ggBWtSsWTzniv53JMjypyJ4hyJVWWInu3OOpt5nYcykyVoSJhJyQu_XnEtlgkY_KVOHygMNWiSak2UULjPLOT1GB3h9jtT4qmEHPDkMrjlTv4ENywQUzwjKqJUillzkU3hZoM10DwnWKb0zGlyyFKCpTQS4IFy5GJxfiICPlCO-GIlkjUvR84Dl-nZd7vQf6YbS85THeIdHLf_UOcXKYAQ2HqgCviLoK3LVvHLwf5XhdkiFeg"/>
+</div>
+</button>
+</div>
+</header>
+<main class="pt-20 px-4 space-y-6 max-w-md mx-auto">
+<!-- User Profile Header -->
+<section class="relative overflow-hidden rounded-xl bg-primary-container p-6 text-on-primary shadow-lg">
+<div class="absolute top-0 right-0 w-32 h-32 pattern-bg pointer-events-none"></div>
+<div class="relative z-10 flex flex-col">
+<span class="text-label-caps font-label-caps opacity-80 mb-1">Selamat Pagi,</span>
+<h2 class="text-headline-lg-mobile font-headline-lg-mobile mb-1">Budi Santoso</h2>
+<p class="text-body-sm opacity-90 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
+                    Kaur Keuangan
+                </p>
+<div class="mt-4 pt-4 border-t border-white/10 flex justify-between items-center">
+<div class="text-body-sm font-medium" id="current-date">Senin, 24 Mei 2024</div>
+<div class="text-title-md font-bold tracking-wider" id="digital-clock">08:15:22</div>
+</div>
+</div>
+</section>
+<!-- Status Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-success-container/10 flex items-center justify-center text-green-700 bg-green-50">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h3 class="text-label-caps font-label-caps text-on-surface-variant">Status Hari Ini</h3>
+<p class="text-title-md font-title-md text-green-700">Hadir</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-body-sm text-on-surface-variant">Masuk sejak</p>
+<p class="font-bold text-primary">07:45 WIB</p>
+</div>
+</section>
+<!-- Presence Action Area -->
+<section class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center justify-center gap-2 h-32 rounded-xl bg-primary text-on-primary shadow-md active:scale-95 transition-transform" id="btn-masuk">
+<span class="material-symbols-outlined text-3xl" data-icon="login">login</span>
+<span class="font-title-md text-title-md">Presensi Masuk</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-2 h-32 rounded-xl border-2 border-primary text-primary hover:bg-surface-container-low active:scale-95 transition-transform" id="btn-pulang">
+<span class="material-symbols-outlined text-3xl" data-icon="logout">logout</span>
+<span class="font-title-md text-title-md">Presensi Pulang</span>
+</button>
+</div>
+<!-- Selfie Preview Area (Hidden initially, shown on click) -->
+<div class="hidden transition-all duration-300" id="camera-section">
+<div class="bg-surface-container border-2 border-dashed border-primary rounded-xl overflow-hidden aspect-square relative">
+<div class="absolute inset-0 flex flex-col items-center justify-center text-on-surface-variant z-10">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="photo_camera">photo_camera</span>
+<p class="text-body-sm text-center px-8">Posisikan wajah Anda pada area bingkai untuk verifikasi biometric</p>
+</div>
+<img class="w-full h-full object-cover opacity-60" data-alt="A POV camera preview on a smartphone screen showing a subtle face guide overlay. The background is a slightly blurred administrative office with Indonesian flags and official documents, creating a professional governmental context. The lighting is bright and clear, reflecting a modern and secure facial recognition interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL1WuKxFSf-VwkQzfHzcANHinSUCtzkoYw6OR4hu3b4MIWBz7w0Cwwddzdj9SGjgpjshm7sptR_OGrIxgeFJGoja-WDVYUtwT_5L7AT7f82D9p0NDtihcYo3utMo2aWT_Prq6TmzZj4puomN2A9-T-nbVqOHpsG5b1uue6eMhNzS_kT1Qi33NZf0nq7wHAlhA5HXDWMrq9DtbJ9-4TclEzdLKt52-Zx0OyceBaFgYzAtuTfuZRzxJmwJCywL01w1_4Ie9ZrCfvZE4"/>
+<div class="absolute bottom-4 left-0 right-0 px-4 z-20">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-bold shadow-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="camera">camera</span>
+                            Ambil Foto &amp; Kirim
+                        </button>
+</div>
+<!-- Decorative scanner line -->
+<div class="absolute top-0 left-0 w-full h-1 bg-primary/40 animate-pulse" style="animation: scan 2s infinite ease-in-out;"></div>
+</div>
+</div>
+</section>
+<!-- Quick Links Bento -->
+<section class="space-y-3">
+<h3 class="text-label-caps font-label-caps text-on-surface-variant ml-1">Layanan &amp; Riwayat</h3>
+<div class="grid grid-cols-1 gap-3">
+<a class="flex items-center gap-4 p-4 bg-white border border-outline-variant rounded-xl shadow-sm hover:shadow-md transition-shadow" href="#">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="flex-1">
+<p class="text-title-md font-title-md text-on-surface">Pengajuan Izin/Cuti</p>
+<p class="text-body-sm text-on-surface-variant">Sakit, Dinas Luar, atau Cuti Tahunan</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center gap-4 p-4 bg-white border border-outline-variant rounded-xl shadow-sm hover:shadow-md transition-shadow" href="#">
+<div class="w-12 h-12 rounded-lg bg-tertiary-container text-white flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</div>
+<div class="flex-1">
+<p class="text-title-md font-title-md text-on-surface">Kalender Kehadiran</p>
+<p class="text-body-sm text-on-surface-variant">Lihat rekap presensi bulanan</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface shadow-lg rounded-t-xl">
+<!-- Beranda (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-2 scale-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-caps font-label-caps mt-1">Beranda</span>
+</a>
+<!-- Presensi -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant px-4 py-2 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="camera_alt">camera_alt</span>
+<span class="text-label-caps font-label-caps mt-1">Presensi</span>
+</a>
+<!-- Izin -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant px-4 py-2 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="text-label-caps font-label-caps mt-1">Izin</span>
+</a>
+<!-- Profil -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:bg-surface-variant px-4 py-2 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-caps font-label-caps mt-1">Profil</span>
+</a>
+</nav>
+<script>
+        // Digital Clock Logic
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit', second: '2-digit' }).replace(/\./g, ':');
+            document.getElementById('digital-clock').textContent = timeStr;
+            
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('id-ID', options);
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // UI Interactions
+        const btnMasuk = document.getElementById('btn-masuk');
+        const cameraSection = document.getElementById('camera-section');
+
+        btnMasuk.addEventListener('click', () => {
+            cameraSection.classList.toggle('hidden');
+            if(!cameraSection.classList.contains('hidden')) {
+                cameraSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        });
+
+        // Simulating some activity pulse
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.opacity = '0.7';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.opacity = '1';
+            });
+        });
+    </script>
+<style>
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(300px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</body></html>
