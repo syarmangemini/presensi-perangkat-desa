@@ -101,3 +101,26 @@ body {
   background-color: var(--color-background);
   color: var(--color-on-background);
 }
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.pattern-bg {
+  background-image: radial-gradient(var(--color-primary) 0.5px, transparent 0.5px);
+  background-size: 16px 16px;
+}
+
+.batik-overlay {
+  background-image: radial-gradient(circle at 2px 2px, rgba(11, 61, 145, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.batik-subtle {
+  background-image: radial-gradient(rgba(11, 61, 145, 0.04) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}

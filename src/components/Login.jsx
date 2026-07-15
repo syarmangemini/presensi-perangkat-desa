@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Login() {
+function Login({ onSuccess }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -22,7 +22,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Login submitted:', { username, password, role: selectedRole, rememberMe });
-    alert(`Login sebagai ${selectedRole === 'admin' ? 'Admin' : selectedRole === 'kadus' ? 'Kepala Desa' : 'Perangkat Desa'}: ${username}`);
+    onSuccess(selectedRole);
   };
 
   const handleForgotPassword = (e) => {
