@@ -3,6 +3,7 @@ import Login from './components/Login'
 import Dashboard from './components/Dashboard'
 import AdminPanel from './components/AdminPanel'
 import Profile from './components/Profile'
+import Monitoring from './components/Monitoring'
 
 function App() {
   const [authed, setAuthed] = useState(false);
@@ -23,6 +24,9 @@ function App() {
     ) : (
       <Profile onNavigate={setView} onLogout={logout} />
     );
+  }
+  if (role === 'kadus') {
+    return <Monitoring onLogout={logout} />;
   }
   return <AdminPanel onLogout={logout} />;
 }
